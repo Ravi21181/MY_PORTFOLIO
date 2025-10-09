@@ -1,34 +1,41 @@
-// Typing effect
-const texts = ["💻 Web Developer", "⚙️ Electrical Engineer", "📊 Data Analyst"];
-let count = 0;
-let index = 0;
-let currentText = '';
-let letter = '';
 
-(function type() {
-  if (count === texts.length) {
-    count = 0;
+
+// Dynamic Name Typing Effect
+document.addEventListener("DOMContentLoaded", () => {
+  const nameText = "RAVI VERMA"; // <-- your name
+  const nameElement = document.getElementById("name");
+  let i = 0;
+
+  function typeWriter() {
+    if (i < nameText.length) {
+      nameElement.textContent += nameText.charAt(i);
+      i++;
+      setTimeout(typeWriter, 200); // typing speed
+    }
   }
-  currentText = texts[count];
-  letter = currentText.slice(0, ++index);
 
-  document.getElementById('typing-text').textContent = letter;
-
-  if (letter.length === currentText.length) {
-    count++;
-    index = 0;
-    setTimeout(type, 1200); // pause before next role
-  } else {
-    setTimeout(type, 150); // typing speed
-  }
-}());
-
-// Smooth scroll for navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
+  typeWriter(); // start typing
 });
+
+  
+document.addEventListener("DOMContentLoaded", () => {
+  const photo = document.querySelector(".profile");
+  if (photo) {
+    setTimeout(() => {
+      photo.classList.add("visible");
+    }, 500); // starts fading after 0.5s
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const text = document.getElementById("blurText");
+
+  // Wait 2 seconds, then make it clear
+  setTimeout(() => {
+    text.classList.add("clear");
+  }, 20);
+});
+
+
+

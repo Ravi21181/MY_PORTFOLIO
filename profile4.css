@@ -25,7 +25,7 @@
   header .container {
     max-width: 800px;
     margin: auto;
-    max-height: 400px;
+    max-height: 300px;
   }
   
   header .profile {
@@ -48,6 +48,24 @@
     font-size: 1.2em;
     color: #cccccc;
   }
+
+  .blur-effect {
+    font-size: 25px;
+    color: #00ffff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    filter: blur(10px);       /* start blurred */
+    opacity: 0.5;             /* slightly transparent at start */
+    transition: filter 1.5s ease, opacity 1.5s ease; /* smooth transition */
+  }
+  
+  /* after 2 seconds this class makes it clear */
+  .blur-effect.clear {
+    filter: blur(0);
+    opacity: 1;
+  }
+  
+
   
   .wave {
     position: relative;
@@ -107,6 +125,16 @@
     font-size: 1.1em;
     color: #ccc;
   }
+
+  .aboutme{
+    transition: transform 0.3s;
+  }
+
+  .aboutme:hover{
+    transform: scale(1.02);
+  }
+    
+  
   
   /* Skills */
   .skills {
@@ -295,6 +323,7 @@
     .profile {
       width: 100px;
       height: 100px;
+      
     }
   
     .service-boxes {
@@ -309,4 +338,21 @@
       flex-direction: column;
     }
   }
+  
+  .profile{
+    opacity: 0;
+    transform: scale(0.95); /* slightly zoomed out */
+    filter: blur(5px);
+    transition: opacity 1.5s ease, transform 1.5s ease, filter 1.5s ease;
+  }
+  
+  .profile.visible {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+  
+
+  
+  
   
