@@ -1,8 +1,5 @@
-
-
-// Dynamic Name Typing Effect
 document.addEventListener("DOMContentLoaded", () => {
-  const nameText = "RAVI VERMA"; // <-- your name
+  const nameText = "RAVI VERMA"; 
   const nameElement = document.getElementById("name");
   let i = 0;
 
@@ -10,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (i < nameText.length) {
       nameElement.textContent += nameText.charAt(i);
       i++;
-      setTimeout(typeWriter, 200); // typing speed
+      setTimeout(typeWriter, 200);
     }
   }
 
-  typeWriter(); // start typing
+  typeWriter();
 });
 
   
@@ -23,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (photo) {
     setTimeout(() => {
       photo.classList.add("visible");
-    }, 500); // starts fading after 0.5s
+    }, 500); 
   }
 });
 
@@ -31,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const text = document.getElementById("blurText");
 
-  // Wait 2 seconds, then make it clear
   setTimeout(() => {
     text.classList.add("clear");
   }, 20);
