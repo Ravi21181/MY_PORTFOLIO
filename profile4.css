@@ -225,6 +225,9 @@
     transform: scale(1.02);
   }
   
+  .Certificate{
+    color: white;
+  }
   /* Blog */
   .blog-posts {
     display: flex;
